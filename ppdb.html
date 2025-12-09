@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PPDB MA NU Al Mustaqim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6fbf7; /* very light green */
+      --card:#ffffff;
+      --primary:#1b8a52; /* green */
+      --accent:#e2b85a; /* gold */
+      --muted:#65736b;
+      --glass: rgba(27,138,82,0.06);
+      --radius:14px;
+      --maxw:1100px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;color:#143927;background:linear-gradient(rgba(246,251,247,0.92), rgba(246,251,247,0.92)),url('manual.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;}
+    .container{max-width:var(--maxw);margin:28px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--primary),#2fb06d);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:20px;box-shadow:0 6px 20px rgba(27,138,82,0.12)}
+    nav{display:flex;gap:10px;align-items:center}
+    nav a{padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--primary);font-weight:600}
+    nav a.cta{background:var(--primary);color:white}
+
+    .hero{margin-top:18px;background:linear-gradient(90deg, rgba(27,138,82,0.06), rgba(226,184,90,0.03));padding:22px;border-radius:var(--radius);display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center}
+    .hero h1{margin:0;font-size:28px}
+    .hero p{color:var(--muted);margin:8px 0 16px}
+
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(17,23,16,0.04)}
+    .flow{display:flex;flex-direction:column;gap:12px}
+    .step{display:flex;gap:12px;align-items:flex-start}
+    .step .num{width:44px;height:44px;border-radius:10px;background:var(--glass);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary)}
+
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,select,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #e8efe9;background:#fcfff9}
+    textarea{min-height:100px}
+
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+    .btn-primary{background:var(--primary);color:white}
+    .btn-ghost{background:transparent;border:1px solid var(--primary);color:var(--primary)}
+
+    footer{margin-top:28px;padding:18px;border-radius:12px;background:linear-gradient(90deg,rgba(27,138,82,0.03),transparent)}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--accent);color:#2f2606;font-weight:700;font-size:13px}
+
+    /* responsive */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      nav{display:none}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted);font-size:14px}
+    .center{text-align:center}
+    .field-help{font-size:13px;color:var(--muted);margin-top:6px}
+
+    /* modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(10,12,9,0.45);display:none;align-items:center;justify-content:center}
+    .modal{background:var(--card);padding:18px;border-radius:12px;max-width:720px;width:92%}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo-img">
+        <div class="logo">MA</div>
+        <div>
+          <div style="font-weight:800;font-size:18px">PPDB - MA NU Al Mustaqim</div>
+          <div class="muted">Penerimaan Peserta Didik Baru | Tahun Ajaran 2025/2026</div>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#home">Beranda</a>
+        <a href="#jalur">Jalur</a>
+        <a href="#syarat">Syarat</a>
+        <a href="#alur">Alur</a>
+        <a href="#pendaftaran" class="cta">Daftar Sekarang</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div>
+          <span class="badge">Terakreditasi A</span>
+          <h1>Selamat datang di PPDB MA NU Al Mustaqim</h1>
+          <p>Daftar online mudah, aman, dan terstruktur. Simak jalur pendaftaran, syarat, dan alur pendaftaran di situs ini</p>
+
+          <div style="display:flex;gap:10px;align-items:center">
+            <a href="#pendaftaran" class="btn btn-primary">Daftar Sekarang</a>
+            <a href="#alur" class="btn btn-ghost">Lihat Alur</a>
+          </div>
+
+          <div style="margin-top:18px" class="card">
+            <strong>Pengumuman penting</strong>
+            <p class="muted" style="margin:6px 0 0">Pendaftaran dibuka: 1 Juni 2025 — 31 Juli 2025. Kuota terbatas per rombongan belajar. Pastikan data benar sebelum mengirim.</p>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3 style="margin-top:0">Ringkasan Cepat</h3>
+          <ul class="muted">
+            <li><strong>Jalur Reguler:</strong> Untuk lulusan MTs/SLTP</li>
+            <li><strong>Jalur Prestasi:</strong> Nilai rapor atau prestasi non-akademik</li>
+            <li><strong>Jalur Pindahan:</strong> Bagi peserta yang pindah domisili</li>
+          </ul>
+          <div style="margin-top:12px">
+            <strong>Kontak</strong>
+            <p class="muted" style="margin:6px 0">Sekolah: MA NU Al Mustaqim<br/>Telepon: 0895-2654-9552<br/>Email: ppdb@al-mustaqim.sch.id</p>
+          </div>
+        </aside>
+      </section>
+
+      <section style="margin-top:18px" class="grid">
+        <div>
+          <div id="jalur" class="card">
+            <h3>Jalur Pendaftaran</h3>
+            <div class="flow">
+              <div class="step card">
+                <div class="num">1</div>
+                <div>
+                  <strong>Jalur Reguler</strong>
+                  <p class="muted">Terbuka untuk lulusan MTs/SLTP. Seleksi berdasar nilai rapor dan dokumen administratif.</p>
+                </div>
+              </div>
+
+              <div class="step card">
+                <div class="num">2</div>
+                <div>
+                  <strong>Jalur Prestasi</strong>
+                  <p class="muted">Untuk calon yang memiliki prestasi akademik atau non-akademik. Sertakan bukti (piagam, sertifikat) saat mendaftar.</p>
+                </div>
+              </div>
+
+              <div class="step card">
+                <div class="num">3</div>
+                <div>
+                  <strong>Jalur Pindahan</strong>
+                  <p class="muted">Bagi siswa yang pindah domisili atau mutasi dari sekolah lain. Perhatikan syarat administrasi tambahan.</p>
+                </div>
+              </div>
+
+              <div class="step card">
+                <div class="num">4</div>
+                <div>
+                  <strong>Jalur Tahfidz / Keagamaan</strong>
+                  <p class="muted">Untuk calon dengan kemampuan Al-Qur'an (dapat diminta tes baca/tahfidz).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="syarat" style="margin-top:16px" class="card">
+            <h3>Syarat Pendaftaran</h3>
+            <ol class="muted">
+              <liFoto>Lampirkan foto diri terbaru ukuran 3x4 (1 lembar) dan scan ijazah/rapor.</liFoto>
+              <li>Fotokopi Kartu Keluarga dan akta kelahiran.</li>
+              <li>Surat keterangan lulus dari sekolah asal (bila belum memiliki ijazah).</li>
+              <li>Untuk jalur prestasi: piagam/sertifikat pendukung.</li>
+              <li>Biaya pendaftaran: Rp 0 (gratis) / atau sesuai ketentuan sekolah.</li>
+            </ol>
+
+            <div class="muted field-help">Catatan: Semua berkas harus jelas terbaca. Dokumen palsu akan dibatalkan.</div>
+          </div>
+
+          <div id="alur" style="margin-top:16px" class="card">
+            <h3>Alur Pendaftaran (Langkah demi langkah)</h3>
+            <div class="step flow">
+              <div class="step">
+                <div class="num">1</div>
+                <div>
+                  <strong>Siapkan Dokumen</strong>
+                  <div class="muted">Kumpulkan rapor, Kartu Keluarga, akta kelahiran, dan dokumen lain sesuai jalur.</div>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="num">2</div>
+                <div>
+                  <strong>Isi Formulir Online</strong>
+                  <div class="muted">Lengkapi data, unggah file, dan kirim permohonan. Periksa kembali sebelum submit.</div>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="num">3</div>
+                <div>
+                  <strong>Verifikasi & Seleksi</strong>
+                  <div class="muted">Panitia akan memverifikasi berkas. Jika lolos, akan ada pengumuman dan tahap wawancara/tes.</div>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="num">4</div>
+                <div>
+                  <strong>Pengumuman</strong>
+                  <div class="muted">Hasil seleksi diumumkan pada tanggal yang tertera. Calon diterima harus melakukan daftar ulang.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:16px" class="card">
+            <h3>FAQ singkat</h3>
+            <details>
+              <summary>Berapa biaya pendaftarannya?</summary>
+              <p class="muted">Gratis. Bila ada ketentuan lokal, informasi akan diumumkan panitia.</p>
+            </details>
+            <details>
+              <summary>Bagaimana jika dokumen belum lengkap?</summary>
+              <p class="muted">Unggah surat keterangan sementara dari sekolah asal, lalu lengkapi segera setelahnya.</p>
+            </details>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h3 id="pendaftaran">Formulir Pendaftaran Online</h3>
+            <form id="regForm" onsubmit="return handleSubmit(event)">
+              <div class="row">
+                <div>
+                  <label for="nama">Nama Lengkap</label>
+                  <input id="nama" name="nama" required />
+                </div>
+                <div>
+                  <label for="jk">Jenis Kelamin</label>
+                  <select id="jk" name="jk" required>
+                    <option value="">-- Pilih --</option>
+                    <option value="L">Laki-laki</option>
+                    <option value="P">Perempuan</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div>
+                  <label for="tempat">Tempat Lahir</label>
+                  <input id="tempat" name="tempat" required />
+                </div>
+                <div>
+                  <label for="tgl">Tanggal Lahir</label>
+                  <input id="tgl" name="tgl" type="date" required />
+                </div>
+              </div>
+
+              <div>
+                <label for="alamat">Alamat</label>
+                <textarea id="alamat" name="alamat" required></textarea>
+              </div>
+
+              <div class="row">
+                <div>
+                  <label for="asal">Asal Sekolah</label>
+                  <input id="asal" name="asal" required />
+                </div>
+                <div>
+                  <label for="jalur">Jalur Pendaftaran</label>
+                  <select id="jalurField" name="jalur" required>
+                    <option value="">-- Pilih --</option>
+                    <option value="reguler">Reguler</option>
+                    <option value="prestasi">Prestasi</option>
+                    <option value="pindahan">Pindahan</option>
+                    <option value="tahfidz">Tahfidz</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="margin-top:10px">
+                <label for="dok">Unggah scan dokumen (rapor, KK, akta) - *format: PDF/JPG</label>
+                <input id="dok" name="dok" type="file" accept=".pdf,image/*" />
+                <div class="field-help">(Ini form statis — file tidak akan benar-benar terkirim. Gunakan untuk demo saja.)</div>
+              </div>
+
+              <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+                <button type="button" class="btn btn-ghost" onclick="fillDemo()">Isi Contoh</button>
+                <button type="submit" class="btn btn-primary">Kirim Pendaftaran</button>
+              </div>
+            </form>
+          </div>
+
+          <div style="margin-top:12px" class="card center">
+            <strong>Alamat</strong>
+            <p class="muted">Jl. Ps. Lama, Rw. II, Bugel, Kec. Kedung, Kabupaten Jepara, Jawa Tengah 59463<br/>Jam layanan: Senin - Jumat, 08.00 - 15.00</p>
+            <a class="btn btn-ghost" href="tel:+6289526549552">Hubungi Panitia</a>
+          </div>
+        </aside>
+      </section>
+
+    </main>
+
+    <footer class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <strong>MA NU Al Mustaqim</strong>
+          <div class="muted">Mempersiapkan Peserta Didik Bersaing di era Globalisasi.</div>
+        </div>
+        <div class="muted">© MA NU Al Mustaqim — PPDB 2025</div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Modal confirmation -->
+  <div id="modal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal card">
+      <h3>Ringkasan Pendaftaran</h3>
+      <div id="summary"></div>
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px">
+        <button class="btn btn-ghost" onclick="closeModal()">Tutup</button>
+        <button class="btn btn-primary" onclick="printSummary()">Cetak Ringkasan</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      const f = document.getElementById('regForm');
+      const data = new FormData(f);
+      const summary = document.getElementById('summary');
+      const entries = {};
+      for (const pair of data.entries()){
+        entries[pair[0]] = pair[1] instanceof File && pair[1].name ? pair[1].name : pair[1];
+      }
+
+      // minimal validation: ensure required fields filled
+      const required = ['nama','jk','tgl','asal','jalur','alamat'];
+      for (const r of required){ if (!entries[r] || entries[r].trim()==='') { alert('Field "'+r+'" harus diisi'); return false }}
+
+      summary.innerHTML = `<p><strong>Nama:</strong> ${escapeHtml(entries.nama)}</p>
+        <p><strong>Jenis Kelamin:</strong> ${escapeHtml(entries.jk)}</p>
+        <p><strong>Tempat, Tgl Lahir:</strong> ${escapeHtml(entries.tempat||'')}, ${escapeHtml(entries.tgl||'')}</p>
+        <p><strong>Asal Sekolah:</strong> ${escapeHtml(entries.asal)}</p>
+        <p><strong>Jalur:</strong> ${escapeHtml(entries.jalur)}</p>
+        <p><strong>Alamat:</strong> ${escapeHtml(entries.alamat)}</p>
+        <p class="muted">Catatan: Ini adalah demo formulir. Untuk pendaftaran resmi, data akan disimpan di server sekolah setelah proses finalisasi.</p>`;
+
+      openModal();
+      return false;
+    }
+
+    function escapeHtml(text){ if(!text) return ''; return text.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;') }
+
+    function openModal(){ document.getElementById('modal').style.display='flex'; }
+    function closeModal(){ document.getElementById('modal').style.display='none'; }
+    function printSummary(){ window.print(); }
+
+    function fillDemo(){ document.getElementById('nama').value='Ahmad Fauzi'; document.getElementById('jk').value='L'; document.getElementById('tempat').value='Bandung'; document.getElementById('tgl').value='2009-05-12'; document.getElementById('asal').value='MTs Al Hikmah'; document.getElementById('jalurField').value='reguler'; document.getElementById('alamat').value='Jl. Contoh No.5, Bandung'; }
+  </script>
+</body>
+</html>
